@@ -22,7 +22,8 @@ public class Login extends HttpServlet {
         String pass = req.getParameter("pass");
         if(uname.equals("user") && pass.equals("pass")){
             req.getRequestDispatcher("index.html").forward(req, resp);
-            System.out.println("yeaaahhh");
+        } else {
+            req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
         }
     }
 }

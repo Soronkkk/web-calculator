@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>registration</servlet-name>
-        <servlet-class>app.servlets.Login</servlet-class>
+        <servlet-class>app.servlets.Registration</servlet-class>
     </servlet>
 
     <servlet-mapping>

@@ -12,16 +12,16 @@
     <h2>Login</h2>
 </div>
 <div>
-    <form action="Login" class="w3-selection w3-center w3-light-grey w3-padding">
-        <label>Name:
-            <input type="text" name="uname" class="w3-input w3-center w3-border w3-round-large"
+    <form action="login" method="post" class="w3-selection w3-center w3-light-grey w3-padding">
+        Name:<input type="text" name="uname" class="w3-input w3-center w3-border w3-round-large"
+                    style="position: relative; left: 35%; width: 30%"/><br/>
+
+        Password:<input type="password" name="pass" class="w3-input w3-center w3-border w3-round-large"
                    style="position: relative; left: 35%; width: 30%"/><br/>
-        </label>
-        <label>Password:
-            <input type="password" name="pass" class="w3-input w3-center w3-border w3-round-large"
-                   style="position: relative; left: 35%; width: 30%"/><br/>
-        </label>
-        <input type="submit" value="login" class="w3-btn w3-center w3-green w3-round-large w3-margin-bottom">
+
+        <button type="submit" name="login" value="login"
+                class="w3-btn w3-center w3-green w3-round-large w3-margin-bottom">Login
+        </button>
     </form>
 </div>
 <div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">

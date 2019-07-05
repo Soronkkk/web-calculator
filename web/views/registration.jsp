@@ -25,10 +25,7 @@
         Surname:<input type="text" name="surname" class="w3-input w3-center w3-border w3-round-large"
                     style="position: relative; left: 35%; width: 30%"/><br/>
 
-        Patronymic:<input type="text" name="patronymic" class="w3-input w3-center w3-border w3-round-large"
-                    style="position: relative; left: 35%; width: 30%"/><br/>
-       <%--fixme добавить кнопку регистрации--%>
-        <button type="submit" name="login" value="login"
+        <button type="submit" name="add" value="add"
                 class="w3-btn w3-center w3-green w3-round-large w3-margin-bottom">Registration
         </button>
     </form>

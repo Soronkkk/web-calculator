@@ -4,7 +4,6 @@ import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
-import java.util.UUID;
 
 @Data
 @Entity
@@ -34,4 +33,51 @@ public class UsersEntity {
     @JoinColumn(name = "COOKIE", nullable = false)
     private ResultsEntity resultsEntity;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public ResultsEntity getResultsEntity() {
+        return resultsEntity;
+    }
+
+    public void setResultsEntity(ResultsEntity resultsEntity) {
+        this.resultsEntity = resultsEntity;
+    }
 }

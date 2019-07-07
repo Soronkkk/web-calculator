@@ -1,5 +1,8 @@
 package app.servlets;
 
+import app.DAO.DAOImple;
+import app.entities.UsersEntity;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -7,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 public class Login extends HttpServlet {
 
@@ -19,16 +23,16 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<UsersEntity> list = DAOImple.getAll();
         String uname = req.getParameter("uname");
         String pass = req.getParameter("pass");
-        if (uname.equals("user") && pass.equals("pass")) {
-            HttpSession session = req.getSession();
-            session.setAttribute("uname", uname);
-            System.out.println("logined");
-            req.getRequestDispatcher("index.html").forward(req, resp);
-
-        } else {
-            req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
+        for (UsersEntity user : list) {
+            if (user.getUserName().equals(uname) && user.getPassword().equals(pass)) {
+                HttpSession session = req.getSession();
+                session.setAttribute("uname", uname);
+                req.getRequestDispatcher("index.jsp").forward(req, resp);
+            }
         }
+        req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
     }
 }

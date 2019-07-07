@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,9 +11,8 @@
 
         function equal() {
             var exp = document.form.textview.value;
-            if (exp) {
-                document.form.textview.value = eval(exp)
-            }
+            var result = eval(exp);
+            document.form.textview.value = result
         }
 
         function clean() {
@@ -79,7 +79,8 @@
 </div>
 <div class="bg w3-container w3-center">
     <div class="w3-bar w3-padding-large w3-padding-24">
-        <button class="w3-btn w3-hover-blue w3-round-large" onclick="location.href='/webcalculator_war_exploded/registration'">
+        <button class="w3-btn w3-hover-blue w3-round-large"
+                onclick="location.href='/webcalculator_war_exploded/registration'">
             Registration
         </button>
         <button class="w3-btn w3-hover-orange w3-round-large"

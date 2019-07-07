@@ -7,7 +7,7 @@ import org.hibernate.Session;
 
 import java.util.List;
 
-public class DAOImple {
+public  class DAOImple {
 
     public void saveUser(UsersEntity usersEntity){
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -17,7 +17,7 @@ public class DAOImple {
         session.close();
     }
 
-    public List<UsersEntity> getAll(){
+    public static List<UsersEntity> getAll(){
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         List list = session.createQuery("from UsersEntity ").list();

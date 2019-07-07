@@ -9,7 +9,7 @@
         <property name="hibernate.connection.driver_class">org.h2.Driver</property>
 
         <property name="hibernate.connection.url">jdbc:h2:~/db/calculator-db</property>
-        <property name="hibernate.connection.username"></property>
+        <property name="hibernate.connection.username"/>
         <property name="hibernate.connection.password"/>
 
         <property name="hibernate.hbm2ddl.auto">update</property>

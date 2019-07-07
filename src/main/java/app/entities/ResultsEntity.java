@@ -27,4 +27,6 @@ public class ResultsEntity {
     @JoinColumn(name = "COOKIE", nullable = false)
     private UsersEntity usersEntity;
 
+    public ResultsEntity() {
+    }
 }

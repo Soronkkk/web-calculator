@@ -27,7 +27,7 @@ public class Registration extends HttpServlet {
             usersEntity.setFirstName(req.getParameter("name"));
             usersEntity.setSecondName(req.getParameter("surname"));
             daoImple.saveUser(usersEntity);
-            req.getRequestDispatcher("views/login.jsp").forward(req,resp);
+            req.getRequestDispatcher("views/index.html").forward(req,resp);
         }
 
     }

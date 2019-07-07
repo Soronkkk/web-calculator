@@ -5,6 +5,16 @@
          version="4.0">
 
     <servlet>
+        <servlet-name>calculator</servlet-name>
+        <servlet-class>app.servlets.Calculator</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>calculator</servlet-name>
+        <url-pattern>/calculator</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>login</servlet-name>
         <servlet-class>app.servlets.Login</servlet-class>
     </servlet>

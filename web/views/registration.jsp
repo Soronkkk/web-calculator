@@ -11,6 +11,13 @@
 <div class="w3-container w3-center w3-green">
     <h2>Registration</h2>
 </div>
+<br/>
+<div class="bg w3-container w3-center">
+        <button class="w3-btn w3-hover-orange w3-round-large"
+                onclick="location.href='/webcalculator_war_exploded/login'">Login
+        </button>
+    </div>
+</div>
 <div>
     <form action="registration" method="post" class="w3-selection w3-center w3-light-grey w3-padding">
         Username:<input type="text" name="username" class="w3-input w3-center w3-border w3-round-large"

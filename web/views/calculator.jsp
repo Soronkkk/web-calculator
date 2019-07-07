@@ -6,33 +6,41 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script>
         function insert(num) {
-            document.form.textview.value = document.form.textview.value + num;
+            if (document.form.result.value !== "") {
+                document.form.operation.value = document.form.result.value;
+                document.form.result.value = "";
+            }
+            document.form.operation.value = document.form.operation.value + num;
         }
 
         function equal() {
-            var exp = document.form.textview.value;
-            var result = eval(exp);
-            document.form.textview.value = result
+            var exp = document.form.operation.value;
+            document.form.operation.value = exp;
+            document.form.result.value = eval(exp);
         }
 
         function clean() {
-            document.form.textview.value = "";
+            document.form.operation.value = "";
+            document.form.result.value = "";
         }
 
         function backspace() {
-            var exp = document.form.textview.value;
-            document.form.textview.value = exp.substring(0, exp.length - 1);
+            var exp = document.form.operation.value;
+            document.form.operation.value = exp.substring(0, exp.length - 1);
         }
 
         function sqrt() {
-            equal();
-            exp = document.form.textview.value;
-            document.form.textview.value = Math.sqrt(exp);
+            var exp = document.form.operation.value;
+            exp = "Math.sqrt("+exp+")";
+            document.form.operation.value = exp;
+            document.form.result.value = eval(exp);
         }
 
         function pow() {
-            var exp = eval(document.form.textview.value);
-            document.form.textview.value = Math.pow(exp, 2);
+            var exp = document.form.operation.value;
+            exp = "Math.pow("+exp+",2)";
+            var exp = eval(document.form.operation.value);
+            document.form.result.value = Math.pow(exp, 2);
         }
     </script>
     <style>
@@ -50,14 +58,6 @@
             background: cornflowerblue;
             border: none;
             color: white;
-        }
-
-        .textview {
-            width: 217px;
-            margin: 5px;
-            font-size: 25px;
-            padding: 5px;
-            color: cornflowerblue;
         }
 
         .main {
@@ -80,7 +80,10 @@
 <div class="bg"></div>
 <div class="main">
     <form name="form">
-        <input class="textview" name="textview">
+        <input type="text" name="operation" class="w3-input w3-center w3-border w3-round-large"
+               style="position: relative"/><br/>
+        <input type="text" name="result" class="w3-input w3-center w3-border w3-round-large"
+               style="position: relative"/><br/>
     </form>
     <table>
         <tr>

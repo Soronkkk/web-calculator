@@ -29,6 +29,5 @@ public class Registration extends HttpServlet {
             daoImple.saveUser(usersEntity);
             req.getRequestDispatcher("views/index.html").forward(req,resp);
         }
-
     }
 }

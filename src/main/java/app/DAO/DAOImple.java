@@ -1,14 +1,11 @@
 package app.DAO;
 
-import app.entities.*;
-import app.util.*;
-
+import app.entities.UsersEntity;
+import app.util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
-import java.util.Queue;
 
 public class DAOImple {
 
@@ -23,7 +20,7 @@ public class DAOImple {
     public List<UsersEntity> getAll(){
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        List<UsersEntity> list = session.createQuery("from UsersEntity ").list();
+        List list = session.createQuery("from UsersEntity ").list();
         session.getTransaction().commit();
         session.close();
         return list;

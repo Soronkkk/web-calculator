@@ -12,7 +12,7 @@
     <h2>Registration</h2>
 </div>
 <div>
-    <form action="login" method="post" class="w3-selection w3-center w3-light-grey w3-padding">
+    <form action="registration" method="post" class="w3-selection w3-center w3-light-grey w3-padding">
         Username:<input type="text" name="username" class="w3-input w3-center w3-border w3-round-large"
                     style="position: relative; left: 35%; width: 30%"/><br/>
 
@@ -31,7 +31,7 @@
     </form>
 </div>
 <div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">
-    <button class="w3-btn w3-round-large" onclick="location.href='/web_calculator_war_exploded/'">Back to main</button>
+    <button class="w3-btn w3-round-large" onclick="location.href='/webcalculator_war_exploded/'">Back to main</button>
 </div>
 </body>
 </html>

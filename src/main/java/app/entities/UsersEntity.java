@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
+import java.util.UUID;
 
 @Data
 @Entity
@@ -29,9 +30,9 @@ public class UsersEntity {
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    @OneToOne
+    @GeneratedValue(generator = "uuid")
     @JoinColumn(name = "COOKIE", nullable = false)
-    private ResultsEntity resultsEntity;
+    private UUID uuid;
 
     public Long getId() {
         return id;
@@ -71,13 +72,5 @@ public class UsersEntity {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public ResultsEntity getResultsEntity() {
-        return resultsEntity;
-    }
-
-    public void setResultsEntity(ResultsEntity resultsEntity) {
-        this.resultsEntity = resultsEntity;
     }
 }

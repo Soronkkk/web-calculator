@@ -22,7 +22,6 @@ public class Registration extends HttpServlet {
         DAOImple daoImple = new DAOImple();
         if(req.getParameter("add")!=null){
             UsersEntity usersEntity = new UsersEntity();
-            //usersEntity.setId((long) Integer.parseInt(req.getParameter("id")));
             usersEntity.setUserName(req.getParameter("username"));
             usersEntity.setPassword(req.getParameter("password"));
             usersEntity.setFirstName(req.getParameter("name"));

@@ -1,5 +1,6 @@
 package app.DAO;
 
+import app.entities.ResultsEntity;
 import app.entities.UsersEntity;
 import app.util.HibernateUtil;
 import org.hibernate.Query;
@@ -7,12 +8,12 @@ import org.hibernate.Session;
 
 import java.util.List;
 
-public  class DAOImple {
+public  class DAOImplementation {
 
-    public void saveUser(UsersEntity usersEntity){
+    public <T> void save(T t){
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(usersEntity);
+        session.save(t);
         session.getTransaction().commit();
         session.close();
     }

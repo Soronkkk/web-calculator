@@ -23,9 +23,9 @@ public class ResultsEntity {
     @Column(name = "RESULT", nullable = false)
     private String result;
 
-    @OneToOne
-    @JoinColumn(name = "COOKIE", nullable = false)
-    private UsersEntity usersEntity;
+    @GeneratedValue(generator = "uuid")
+    @Column(name = "COOKIE", nullable = false)
+    private UUID cookie;
 
     public Long getId() {
         return id;
@@ -51,11 +51,11 @@ public class ResultsEntity {
         this.result = result;
     }
 
-    public UsersEntity getUsersEntity() {
-        return usersEntity;
+    public UUID getCookie() {
+        return cookie;
     }
 
-    public void setUsersEntity(UsersEntity usersEntity) {
-        this.usersEntity = usersEntity;
+    public void setCookie(UUID cookie) {
+        this.cookie = cookie;
     }
 }

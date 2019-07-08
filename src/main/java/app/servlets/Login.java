@@ -1,9 +1,8 @@
 package app.servlets;
 
-import app.DAO.DAOImple;
+import app.DAO.DAOImplementation;
 import app.entities.UsersEntity;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,13 +22,13 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<UsersEntity> list = DAOImple.getAll();
+        List<UsersEntity> list = DAOImplementation.getAll();
         String uname = req.getParameter("uname");
         String pass = req.getParameter("pass");
         for (UsersEntity user : list) {
             if (user.getUserName().equals(uname) && user.getPassword().equals(pass)) {
                 HttpSession session = req.getSession();
-                session.setAttribute("uname", uname);
+                session.setAttribute("user", user);
                 req.getRequestDispatcher("index.jsp").forward(req, resp);
             }
         }

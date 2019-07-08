@@ -1,9 +1,8 @@
 package app.servlets;
 
-import app.DAO.DAOImple;
+import app.DAO.DAOImplementation;
 import app.entities.UsersEntity;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,15 +18,15 @@ public class Registration extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        DAOImple daoImple = new DAOImple();
+        DAOImplementation daoImple = new DAOImplementation();
         if(req.getParameter("add")!=null){
             UsersEntity usersEntity = new UsersEntity();
             usersEntity.setUserName(req.getParameter("username"));
             usersEntity.setPassword(req.getParameter("password"));
             usersEntity.setFirstName(req.getParameter("name"));
             usersEntity.setSecondName(req.getParameter("surname"));
-            daoImple.saveUser(usersEntity);
-            req.getRequestDispatcher("views/index.html").forward(req,resp);
+            daoImple.save(usersEntity);
+            req.getRequestDispatcher("views/login.jsp").forward(req,resp);
         }
     }
 }

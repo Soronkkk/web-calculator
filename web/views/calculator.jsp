@@ -31,16 +31,17 @@
 
         function sqrt() {
             var exp = document.form.operation.value;
-            exp = "Math.sqrt("+exp+")";
+            exp = "Math.sqrt(" + exp + ")";
             document.form.operation.value = exp;
             document.form.result.value = eval(exp);
         }
 
         function pow() {
             var exp = document.form.operation.value;
-            exp = "Math.pow("+exp+",2)";
-            var exp = eval(document.form.operation.value);
-            document.form.result.value = Math.pow(exp, 2);
+            power = prompt("Введите степень");
+            exp = "Math.pow(" + exp + ',' + power + ')';
+            document.form.operation.value = exp;
+            document.form.result.value = eval(exp);
         }
     </script>
     <style>
@@ -79,11 +80,12 @@
 </div>
 <div class="bg"></div>
 <div class="main">
-    <form name="form">
+    <form name="form" method="post">
         <input type="text" name="operation" class="w3-input w3-center w3-border w3-round-large"
                style="position: relative"/><br/>
         <input type="text" name="result" class="w3-input w3-center w3-border w3-round-large"
                style="position: relative"/><br/>
+        <input class="button" type="submit" value="=" onclick="equal()">
     </form>
     <table>
         <tr>
@@ -108,12 +110,12 @@
             <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
             <td><input class="button" type="button" value="2" onclick="insert(2)"></td>
             <td><input class="button" type="button" value="3" onclick="insert(3)"></td>
-            <td><input class="button" type="button" value="=" onclick="equal()"></td>
+            <td><input class="button" type="submit" value="=" onclick="equal()"></td>
         </tr>
         <tr>
             <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
             <td><input class="button" type="button" value="." onclick="insert('.')"></td>
-            <td><input class="button" type="button" value="^2" onclick="pow()"></td>
+            <td><input class="button" type="button" value="^n" onclick="pow()"></td>
             <td><input class="button" type="button" value="√" onclick="sqrt()"></td>
         </tr>
     </table>

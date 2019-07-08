@@ -3,7 +3,6 @@ package app.entities;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -33,7 +32,7 @@ public class UsersEntity {
 
     @GeneratedValue(generator = "uuid")
     @JoinColumn(name = "COOKIE", nullable = false)
-    private UUID uuid;
+    private UUID cookie;
 
     public Long getId() {
         return id;
@@ -75,11 +74,11 @@ public class UsersEntity {
         this.password = password;
     }
 
-    public UUID getUuid() {
-        return uuid;
+    public UUID getCookie() {
+        return cookie;
     }
 
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
+    public void setCookie(UUID cookie) {
+        this.cookie = cookie;
     }
 }

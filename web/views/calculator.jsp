@@ -30,18 +30,22 @@
         }
 
         function sqrt() {
-            var exp = document.form.operation.value;
-            exp = "Math.sqrt(" + exp + ")";
-            document.form.operation.value = exp;
-            document.form.result.value = eval(exp);
+            if (document.form.operation.value !== "") {
+                var exp = document.form.operation.value;
+                exp = "Math.sqrt(" + exp + ")";
+                document.form.operation.value = exp;
+                document.form.result.value = eval(exp);
+            }
         }
 
         function pow() {
-            var exp = document.form.operation.value;
-            power = prompt("Введите степень");
-            exp = "Math.pow(" + exp + ',' + power + ')';
-            document.form.operation.value = exp;
-            document.form.result.value = eval(exp);
+            if (document.form.operation.value !== "") {
+                var exp = document.form.operation.value;
+                power = prompt("Введите степень");
+                exp = "Math.pow(" + exp + ',' + power + ')';
+                document.form.operation.value = exp;
+                document.form.result.value = eval(exp);
+            }
         }
     </script>
     <style>
@@ -80,13 +84,14 @@
 </div>
 <div class="bg"></div>
 <div class="main">
-    <form name="form" method="post" action="calculator">
+    <form name="form" method="post" id="form">
         <input type="text" name="operation" class="w3-input w3-center w3-border w3-round-large"
                style="position: relative"/><br/>
         <input type="text" name="result" class="w3-input w3-center w3-border w3-round-large"
                style="position: relative"/><br/>
         <input class="button" type="submit" value="=" onclick="equal()">
     </form>
+
     <table>
         <tr>
             <td><input class="button" type="button" value="C" onclick="clean()"></td>

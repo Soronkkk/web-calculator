@@ -80,7 +80,7 @@
 </div>
 <div class="bg"></div>
 <div class="main">
-    <form name="form" method="post">
+    <form name="form" method="post" action="calculator">
         <input type="text" name="operation" class="w3-input w3-center w3-border w3-round-large"
                style="position: relative"/><br/>
         <input type="text" name="result" class="w3-input w3-center w3-border w3-round-large"

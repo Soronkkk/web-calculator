@@ -16,12 +16,11 @@ public class main {
             usersEntity.setSecondName("fgfgsd");
             daoImple.saveUser(usersEntity);
             daoImple.deleteUser(1);*/
-  System.out.println(daoImple.getUserById(291).getCookie());
         ResultsEntity resultsEntity = new ResultsEntity();
         resultsEntity.setResult("0");
         resultsEntity.setOperation("0");
         resultsEntity.setId((long) 1);
-        resultsEntity.setCookie(UUID.fromString("ce6981aa-4033-4df9-b9c1-3d7257e99636"));
+        resultsEntity.setCookie(UUID.randomUUID());
         daoImple.save(resultsEntity);
     }
 }

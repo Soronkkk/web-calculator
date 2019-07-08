@@ -3,6 +3,8 @@ package app.entities;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -23,7 +25,6 @@ public class ResultsEntity {
     @Column(name = "RESULT", nullable = false)
     private String result;
 
-    @GeneratedValue(generator = "uuid")
     @Column(name = "COOKIE", nullable = false)
     private UUID cookie;
 
